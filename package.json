@@ -1,0 +1,19 @@
+{
+    "name": "poi-svelte",
+    "version": "1.0.0",
+    "license": "MIT",
+    "scripts": {
+        "start": "poi --serve src/index.js",
+        "build": "poi --prod src/index.js",
+        "build-wc": "CUSTOM_ELEMENT=1 poi --prod src/wc.js",
+        "test-static": "cd dist && serve"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "extract-text-webpack-plugin": "^3.0.2",
+        "prettier": "^1.18.2",
+        "prettier-plugin-svelte": "^0.7.0",
+        "svelte": "^3.6.10",
+        "svelte-loader": "^2.13.6"
+    }
+}
