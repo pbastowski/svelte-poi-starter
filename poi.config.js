@@ -1,6 +1,8 @@
-// const ExtractTextPlugin = require('extract-text-webpack-plugin')
-
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
+
+const mode = process.env.NODE_ENV || 'development'
+const prod = mode === 'production'
 
 module.exports = {
     configureWebpack: {
@@ -12,6 +14,7 @@ module.exports = {
             extensions: ['.mjs', '.js', '.svelte'],
             mainFields: ['svelte', 'browser', 'module', 'main']
         },
+
         module: {
             rules: [
                 {
@@ -21,19 +24,31 @@ module.exports = {
                         loader: 'svelte-loader',
                         options: {
                             emitCss: true,
+                            // hotReload: true,
                             customElement: !!process.env.CUSTOM_ELEMENT
                         }
                     }
+                },
+                {
+                    test: /\.css$/,
+                    use: [
+                        /**
+                         * MiniCssExtractPlugin doesn't support HMR.
+                         * For developing, use 'style-loader' instead.
+                         * */
+                        prod ? MiniCssExtractPlugin.loader : 'style-loader',
+                        'css-loader'
+                    ]
                 }
-                // {
-                //     test: /\.css$/,
-                //     use: ExtractTextPlugin.extract({
-                //         fallback: 'style-loader',
-                //         use: 'css-loader'
-                //     })
-                // }
             ]
-        }
-        // plugins: [new ExtractTextPlugin('styles.css')]
+        },
+
+        plugins: [
+            new MiniCssExtractPlugin({
+                filename: '[name].css'
+            })
+        ],
+
+        devtool: prod ? false : 'source-map'
     }
 }
