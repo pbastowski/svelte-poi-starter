@@ -1,4 +1,4 @@
-# POI svelte 3
+# Svelte 3 + POI + Prettier
 
 A simple starter setup that uses 
 - Svelte 3, because it's so cool
