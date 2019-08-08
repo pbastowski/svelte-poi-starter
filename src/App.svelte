@@ -3,6 +3,12 @@
     let text = 'testing'
 </script>
 
+<style>
+    :global(pre) {
+        background: yellow;
+    }
+</style>
+
 <h1>Hello Svelte 42</h1>
 <p>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea id impedit iste

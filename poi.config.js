@@ -1,4 +1,4 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
 
 const mode = process.env.NODE_ENV || 'development'
@@ -28,26 +28,26 @@ module.exports = {
                             customElement: !!process.env.CUSTOM_ELEMENT
                         }
                     }
-                },
-                {
-                    test: /\.css$/,
-                    use: [
-                        /**
-                         * MiniCssExtractPlugin doesn't support HMR.
-                         * For developing, use 'style-loader' instead.
-                         * */
-                        prod ? MiniCssExtractPlugin.loader : 'style-loader',
-                        'css-loader'
-                    ]
                 }
+                // {
+                //     test: /\.css$/,
+                //     use: [
+                //         /**
+                //          * MiniCssExtractPlugin doesn't support HMR.
+                //          * For developing, use 'style-loader' instead.
+                //          * */
+                //         prod ? MiniCssExtractPlugin.loader : 'style-loader',
+                //         'css-loader'
+                //     ]
+                // }
             ]
         },
 
-        plugins: [
-            new MiniCssExtractPlugin({
-                filename: '[name].css'
-            })
-        ],
+        // plugins: [
+        //     new MiniCssExtractPlugin({
+        //         filename: '[name].css'
+        //     })
+        // ],
 
         devtool: prod ? false : 'source-map'
     }
