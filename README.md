@@ -31,5 +31,11 @@ Definitely not. Web components are a low-level technology that allows you to cre
 2. used as building blocks within frameworks
 3. low level hand coding of web apps - more code and more chance of errors 
 
-Personally, I would not do options 2 and 3. However, I see a good use-case for wrapping features or components built using frameworks within web components and then integrating them into full web apps, in the same web page, if required.
+Personally, I would not do options 2 and 3. However, I see a good use-case for wrapping features or code built using the aforementioned frameworks within web components and then integrating them into full web apps, in the same web page, if required.
  
+Svelte app (accounts/admin) --> build Svelte app wrapped inside a web-component --> `<accounts-admin />`
+
+VueJs app (accounts/register) --> build Vue app wrapped with a web-component --> `<accounts-register />`
+
+Now, two teams have used two separate frameworks to create components that you can add to web pages in any way you like, because they are available through the new HTML tags `<accounts-admin />` and `<accounts-register />`.
+
