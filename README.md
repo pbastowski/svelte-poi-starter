@@ -2,7 +2,7 @@
 
 A simple starter setup for Svelte 3 that outputs both web apps and web components. I use POI for bundling, which behind the scenes uses webpack. POI automates WebPack configuration so much that in some cases it is completely zero-comnfig. In the case of Svelte all we have to do is to configure svelte-loader in poi.config.js.
 
-### Packages used
+## Packages used
 
 - Svelte 3, because it's so cool
 - POI v12 for bundling (webpack zero config automation)
@@ -11,17 +11,15 @@ A simple starter setup for Svelte 3 that outputs both web apps and web component
 **To do:**
 - some kind of testing setup
 
-### Why output web-components with Svelte
+## Why output web-components with Svelte?
 
 Why would we want to output web components when we already have Svelte? Well, you may not care to do that yourself, but, for example, your client might be using web components for all their front end work. This setup will allow you to conform to their requirements while not going back to the basics of programming everything yourself in JavaScript.
 
-### Why not use lit-element?
+## Why not use lit-element?
 
-Because it is a tiny library that does not provide all the features of a fully fledged framework like Svelte or VueJs or even AngularJs.
+Because it is a tiny library that basically creates new HTML tags that you can use in your web pages. However, it does not provide all the features of a fully fledged frameworks like SvelteJs, VueJs, React or AngularJs, which are designed for developing web applications.
 
-I like my framework to offer things like reactive variables and reactive stores and I don't want to write class objects that extend other classes just to create components for my web app. I also like a nice templating structure that does not rely on mapping through arrays and nested `html` calls. 
-
-While these frameworks are larger in byte-size than lit-element, they offer a lot more useful features, which I won't have to code myself, and will thus save me a lot of code in the end.
+While these frameworks are initially larger in byte-size than lit-element and plain web-components, they do offer a lot more useful features and functionality out of the box. I won't have to code these features myself, which will thus save me a lot of code in the end.
 
 ### Are web-components useless then?
 
