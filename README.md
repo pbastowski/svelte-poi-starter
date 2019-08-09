@@ -17,7 +17,7 @@ Why would we want to output web components when we already have Svelte? Well, yo
 
 ## Why not use lit-element?
 
-Because it is a tiny library that basically creates new HTML tags that you can use in your web pages. However, it does not provide all the features of a fully fledged frameworks like SvelteJs, VueJs, React or AngularJs, which are designed for developing web applications.
+`lit-element` it is a tiny library that basically creates new HTML tags, which you can use in your web pages. However, it does not provide all the features of a fully fledged frameworks like SvelteJs, VueJs, React or AngularJs, which are designed for developing web applications.
 
 While these frameworks are initially larger in byte-size than lit-element and plain web-components, they do offer a lot more useful features and functionality out of the box. I won't have to code these features myself, which will thus save me a lot of code in the end.
 
