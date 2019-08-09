@@ -41,5 +41,5 @@ VueJs app (accounts/register) --> build Vue app wrapped with a web-component -->
 
 Now, two teams have used two separate frameworks to create components that you can add to web pages in any way you like, because they are available through the new HTML tags `<accounts-admin />` and `<accounts-register />`.
 
-All you have to do is to import or include the distribution JS files for these components in your app and they are ready tio use.
+All you have to do is to import or include the distribution JS files for these components in your app and they are ready to use.
 
