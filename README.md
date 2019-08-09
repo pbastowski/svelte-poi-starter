@@ -5,8 +5,8 @@ A simple starter setup for Svelte 3 that outputs both web apps and web component
 ### Packages used
 
 - Svelte 3, because it's so cool
-- POI v12 for bundling and
-- prettier to make your code look nice and the same as everyone else's.
+- POI v12 for bundling (webpack zero config automation)
+- Prettier to make your code look nice and the same as everyone else's
 
 **To do:**
 - some kind of testing setup
