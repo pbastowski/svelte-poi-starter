@@ -1,6 +1,6 @@
 # Svelte 3 + POI + Prettier
 
-A simple starter setup for Svelte 3 that outputs both web apps and web components. 
+A simple starter setup for Svelte 3 that outputs both web apps and web components. I use POI for bundling, which behind the scenes uses webpack. POI automates WebPack configuration so much that in some cases it is completely zero-comnfig. In the case of Svelte all we have to do is to configure svelte-loader in poi.config.js.
 
 ### Packages used
 
