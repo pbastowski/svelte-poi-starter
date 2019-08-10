@@ -16,6 +16,7 @@
         "prettier-plugin-svelte": "^0.7.0",
         "style-loader": "^0.23.1",
         "svelte": "latest",
-        "svelte-loader": "^2.13.6"
+        "svelte-loader": "^2.13.6",
+        "serve": "^11.1.0"
     }
 }
