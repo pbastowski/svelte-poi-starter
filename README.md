@@ -2,6 +2,8 @@
 
 A simple starter setup for Svelte 3 that outputs both web apps and web components. I use POI for bundling, which behind the scenes uses webpack. POI automates WebPack configuration so much that in some cases it is completely zero-comnfig. In the case of Svelte all we have to do is to configure svelte-loader in poi.config.js.
 
+Web Components are kind of the focus with this repo, although it created stsndard web apps too.
+
 ## Packages used
 
 - Svelte 3, because it's so cool
@@ -10,6 +12,21 @@ A simple starter setup for Svelte 3 that outputs both web apps and web component
 
 **To do:**
 - some kind of testing setup
+
+## Usage
+
+```sh
+npx degit pbastowski/svelte-poi-starter my-svelte-project
+```
+
+This will clone the repo, removing all git references from it, leaving a clean project for you to start from.
+
+You will have four npm tasks to use
+
+**start** - starts the webpack dev server
+**build** - builds your app and puts it in the `dist` folder
+**build-wc** - builds a version of your app that is wrapped in a Web Component and can be distributed and used just like any other HTML tag
+**test-static** - uses the `serve` npm package to serve the static version of your app/web component from the `dist` folder, allowing you to see what it would look and work like in production.
 
 ## Why output Web Components with Svelte?
 
