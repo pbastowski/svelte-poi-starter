@@ -25,6 +25,7 @@
             window.addEventListener('load', () => {
                 const el = document.querySelector('my-thing')
                 el.addEventListener('custom', customHandler)
+                el.$on('svelte-event', () => console.log('### Svelte EVENT'))
             })
 
             function clickHandler() {
