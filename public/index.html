@@ -8,10 +8,16 @@
     </head>
     <body>
         <% if (!envs.POI_APP_CUSTOM_ELEMENT) { %>
-
+        <!--
+            This section is only generated for Svelte web apps.
+        -->
         <div id="app"></div>
 
         <% } else { %>
+
+        <!--
+            This section is only generated for Web components.
+        -->
 
         <my-thing onclick="clickHandler()"></my-thing>
 
