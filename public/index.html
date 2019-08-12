@@ -7,7 +7,27 @@
         <title>poi-svelte</title>
     </head>
     <body>
+        <% if (!envs.POI_APP_CUSTOM_ELEMENT) { %>
+
         <div id="app"></div>
-        <my-thing></my-thing>
+
+        <% } else { %>
+
+        <my-thing onclick="clickHandler()"></my-thing>
+
+        <script>
+            window.addEventListener('load', () => {
+                const el = document.querySelector('my-thing')
+                el.addEventListener('custom', customHandler)
+            })
+
+            function clickHandler() {
+                console.log('### CLICK')
+            }
+            function customHandler() {
+                console.log('### CUSTOM')
+            }
+        </script>
+        <% } %>
     </body>
 </html>

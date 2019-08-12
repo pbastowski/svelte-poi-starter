@@ -8,5 +8,5 @@
 
 <label class={labelClass} style={labelStyle}>
     <slot />
-    <input bind:value class={$$props.class} style={$$props.style} />
+    <input on:click bind:value class={$$props.class} style={$$props.style} />
 </label>
