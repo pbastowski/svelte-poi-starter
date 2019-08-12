@@ -4,8 +4,9 @@
     "license": "MIT",
     "scripts": {
         "start": "poi --serve src/index.js",
+        "start-wc": "POI_APP_CUSTOM_ELEMENT=1 poi --serve src/wc.js",
         "build": "poi --prod src/index.js",
-        "build-wc": "CUSTOM_ELEMENT=1 poi --prod src/wc.js",
+        "build-wc": "POI_APP_CUSTOM_ELEMENT=1 poi --prod src/wc.js",
         "test-static": "cd dist && serve"
     },
     "dependencies": {},

@@ -25,7 +25,7 @@ module.exports = {
                         options: {
                             emitCss: true,
                             // hotReload: true,
-                            customElement: !!process.env.CUSTOM_ELEMENT
+                            customElement: !!process.env.POI_APP_CUSTOM_ELEMENT
                         }
                     }
                 }
