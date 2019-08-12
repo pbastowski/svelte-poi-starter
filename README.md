@@ -4,12 +4,13 @@ A simple starter setup for Svelte 3 that outputs both web apps and web component
 
 ## Packages used
 
-- Svelte 3, because it's so cool
-- POI v12 for bundling (webpack zero config automation)
-- Prettier to make your code look nice and the same as everyone else's
+-   Svelte 3, because it's so cool
+-   POI v12 for bundling (webpack zero config automation)
+-   Prettier to make your code look nice and the same as everyone else's
 
 **To do:**
-- some kind of testing setup
+
+-   some kind of testing setup
 
 ## Usage
 
@@ -23,12 +24,13 @@ This will clone the repo, removing all git references from it, leaving a clean p
 
 You will have four npm tasks to use
 
-| Task | Description |
-|-----|-------|
-|**start** | starts the webpack dev server|
-|**build** | builds your app and puts it in the `dist` folder|
-|**build-wc** | builds a version of your app that is wrapped in a Web Component and can be distributed and used just like any other HTML tag|
-|**test-static** | uses the `serve` npm package to serve the static version of your app/web component from the `dist` folder, allowing you to see what it would look and work like in production.|
+| Task            | Description                                                                                                                                                                                                                                                                                 |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **start**       | Starts the webpack dev server with automatic page reloading                                                                                                                                                                                                                                 |
+| **start-wc**    | Starts the webpack dev server in WEB Component target mode with auto page reloading                                                                                                                                                                                                         |
+| **build**       | Builds your web app and puts the compiled files in the `dist` folder                                                                                                                                                                                                                        |
+| **build-wc**    | Builds a version of your app that is wrapped in a Web Component and can be distributed and used just like any other HTML tag                                                                                                                                                                |
+| **test-static** | uses the `serve` npm package to serve the static version of your app or web component from the `dist` folder, allowing you to see what it would look and work like in production. Make sure to run a build or build-wc before you run this task, otherwise there will be no files to serve. |
 
 ## Why output Web Components with Svelte?
 
@@ -46,12 +48,12 @@ Definitely not. Web components are a low-level technology that allows you to cre
 
 1. integration of various features in a web page
 2. used as building blocks within frameworks
-3. low level hand coding of web apps - more code and more chance of errors 
+3. low level hand coding of web apps - more code and more chance of errors
 
 Personally, I would not do options 2 and 3. However, I see a good use-case for wrapping features or code built using the aforementioned frameworks within web components and then integrating them into full web apps, in the same web page, if required.
 
 #### Example:
- 
+
 Svelte app (accounts/admin) --> build Svelte app wrapped inside a Web Component --> `<accounts-admin />`
 
 VueJs app (accounts/register) --> build Vue app wrapped with a Web Component --> `<accounts-register />`
@@ -59,4 +61,3 @@ VueJs app (accounts/register) --> build Vue app wrapped with a Web Component -->
 Now, two teams have used two separate frameworks to create components that you can add to web pages in any way you like, because they are available through the new HTML tags `<accounts-admin />` and `<accounts-register />`.
 
 All you have to do is to import or include the distribution JS files for these components in your app and they are ready to use.
-
