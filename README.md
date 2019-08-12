@@ -15,6 +15,8 @@ A simple starter setup for Svelte 3 that outputs both web apps and web component
 
 ```sh
 npx degit pbastowski/svelte-poi-starter my-svelte-project
+cd my-svelte-project
+npm i
 ```
 
 This will clone the repo, removing all git references from it, leaving a clean project for you to start from.
