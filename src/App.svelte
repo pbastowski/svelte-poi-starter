@@ -1,8 +1,9 @@
 <script>
-    const dispatch = require('svelte').createEventDispatcher()
     import Input from './Input.svelte'
+    const dispatch = require('svelte').createEventDispatcher()
 
-    let text = 'testing'
+    export let abc
+    export let hello
 
     function emit(el, name, detail) {
         el.dispatchEvent(
@@ -13,13 +14,43 @@
             })
         )
     }
+    let text = 'testing'
+    let initialised = false
+
+    /**
+     * When com piling to a web componenbt target, we must use a custom
+     * onLoad handler to retrieve the props. That's because they are not
+     * yet available when the component instance is create or in the
+     * onMount callback.
+     **/
+
+    console.log('$$props: instance created:', 'abc=', abc, 'hello=', hello)
+    function onLoad(ev) {
+        console.log(
+            '$$props: custom onLoad handler:',
+            'abc=',
+            abc,
+            'hello=',
+            hello
+        )
+        initialised = true
+    }
 </script>
 
-<h1>Hello Svelte</h1>
+<svelte:window on:load={onLoad} />
 
-<svelte:options tag="my-thing" accessors={true} />
+<svelte:options tag="my-thing" />
 
 <!--
+    We can prevent content from rendering until we have finished initialising
+    our data by using a flag like initialised. For web component targets, this
+    flag is set in the custom onLoad handler, see above.
+    For Svelte apps you would initialise this flag in the onMount callback.
+-->
+{#if initialised}
+    <h1>Hello Svelte</h1>
+
+    <!--
     Events dispatched with Svelte using createEventDispatcher() can not
     be handled with normal javascript event handling. That is
     `element.addEventListener('svelte-event', handler)` and
@@ -33,13 +64,14 @@
     See index.html for an example.
 -->
 
-<Input
-    on:click={e => {
-        dispatch('svelte-event')
-        emit(e.target, 'custom')
-    }}
-    bind:value={text}>
-    Label
-</Input>
+    <Input
+        on:click={e => {
+            dispatch('svelte-event')
+            emit(e.target, 'custom')
+        }}
+        bind:value={text}>
+        Label
+    </Input>
 
-<pre>text: {text}</pre>
+    <pre>text: {text}</pre>
+{/if}
